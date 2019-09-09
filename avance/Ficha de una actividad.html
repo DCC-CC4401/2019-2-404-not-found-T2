@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Proyecto</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=71104a88839943bcbd0f233791623b9b">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css?h=03ab36d1dde930b7d44a712f19075641">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700">
+    <link rel="stylesheet" href="assets/css/16-scrollbar-styles-1.css?h=d69a830b3be61424103c7db76b27dde0">
+    <link rel="stylesheet" href="assets/css/16-scrollbar-styles.css?h=2cf3b2bdd056c863dd79026acaff609d">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css?h=c942239c91f94a6b90d67fb2496c21bf">
+    <link rel="stylesheet" href="assets/css/Header-Dark.css?h=801c6c4e9bd24326470940027d227760">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css?h=587ac2057624923cd5be3eaf8b1158cd">
+    <link rel="stylesheet" href="assets/css/Profile-Edit-Form-1.css?h=941c84e96020d5a5b03f80619fed6ea9">
+    <link rel="stylesheet" href="assets/css/Profile-Edit-Form.css?h=5ecb76a1061fdd34dcc451bc4075f02d">
+    <link rel="stylesheet" href="assets/css/styles.css?h=d41d8cd98f00b204e9800998ecf8427e">
+    <style>
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #B47CDA;
+  color: white;
+  margin-right: 10px; 
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  text-align:right;
+  padding: 10px 18px;
+  background-color: #B47CDA;
+}
+.nowbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #B47CDB;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto; /* 5% from the top, 15% from the bottom and centered */
+  padding: 0;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+</style>
+</head>
+
+<body style="background-color: #e1d9f5;">
+    <div id="id01" class="modal" style="height: 100%; width: 100%">
+  
+  <form class="modal-content animate" style="border-radius: 15px; height: 140%" action="/action_page.php">
+    <div class="container" style="border-radius:  15px 15px 0px 0px; background-color:#8054FF">
+    
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style = "border-radius: 40px;">x</button>
+      
+    </div>
+    <div class="container">
+      <label for="cname"><b>Nombre de la actividad</b></label>
+      <input type="text" placeholder="Ingrese nombre" name="cname" required>
+
+      <label for="des"><b>Descripción</b></label>
+      <input type="password" placeholder="Ingrese Descripción" name="des" required>
+        
+      <label for="cat"><b>Categoría</b></label>
+      <br>
+      <br>
+      <select name="cat" required> 
+       <label for="cat"><b>Descripción</b></label>
+       <option>Deporte</option>
+       <option>Estudio</option>
+       <option>Ir a clases</option>
+       <option>Dormir</option>
+       </select>
+      <br>
+      <br>
+      <label for="psw"><b>Fecha</b></label>
+      <br>
+      <br>
+      <input type="date" placeholder="Ingrese Descripción" name="psw" required>
+      
+      <br>
+      <br>
+       <label for="psw"><b>Hora de inicio</b></label>
+      <br>
+      <br>
+      <input type="time" placeholder="Ingrese Descripción" name="psw" required> <button class="nowbtn">ahora</button>
+      
+      <br>
+      <br>
+      <label for="psw"><b>Duración</b></label>
+      <br>
+      <br>
+      <input type="time" placeholder="Ingrese Descripción" name="psw" required>
+      
+      <button type="submit" style="border-radius: 10px;">Aceptar</button>
+      <label>
+        
+      </label>
+    </div>
+
+    
+  </form>
+</div>
+
+<!-- Modal for a created event.-->
+<div id="id02" class="modal" style="height: 100%; width: 100%">
+  
+  <form class="modal-content animate" style="border-radius: 15px; height: 80%" action="/action_page.php">
+    <div class="container" style="border-radius:  15px 15px 0px 0px; background-color:#8054FF">
+        <h2 style="color: white;">Dormir</h2>
+      
+    </div>
+    <div class="container">
+      
+      <label for="des"><b>Descripción:</b></label>
+      <p>8 horas de sueño durante la noche</p>
+        
+      <label for="cat"><b>Categoría:</b></label>
+      <p>Dormir</p>
+
+      <label for="psw"><b>Fecha:</b></label>
+      <p>09/09/2019</p>
+
+       <label for="psw"><b>Hora de inicio</b></label>
+      <p>23:00</p>
+      
+      <label for="psw"><b>Duración:</b></label>
+      <p>08:00</p>
+      <label>
+        
+      </label>
+    </div>
+
+    
+  </form>
+</div>
+
+    <div class="header-dark" style="height: 64px;background-color: rgb(255,255,255);background-image: url(&quot;assets/img/background.png?h=516acba3f3087872e8e1224e6f4ceed2&quot;);">
+        <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search" style="background-color: #4200c2;">
+            <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><img class="rounded-circle img-fluid" style="height: 50px;height: 142;width: 144;padding-left: 0px;padding-right: 0px;"
+                    src="assets/img/tipo.jpg?h=c0e8c55db5b29485f48209122deb5df1">
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item" role="presentation"></li>
+                    </ul>
+                    <!-- Start: NombreyCorreo -->
+                    <h3 style="font-family: 'Nanum Gothic', sans-serif;font-size: 18px;margin-left: 10px;">Hola Jorge!<small><br>jperez@gmail.com</small></h3>
+                    <!-- End: NombreyCorreo --><a class="btn btn-light action-button" role="button" href="perfil.html" style="margin-left: 122px;background-color: #8054ff;">Mi perfil</a><a class="btn btn-light action-button" role="button" href="stats.html" style="margin-left: 23px;background-color: #8054ff;">Stats</a>
+                    <form
+                        class="form-inline mr-auto" target="_self">
+                        <div class="form-group"><label for="search-field"></label></div>
+                        </form><i class="fa fa-search" style="margin-left: 24px;"></i><input type="search" id="search-field" class="search-field" name="search" style="padding: 0px;margin-left: 10px;"><span class="navbar-text"></span><a class="btn btn-light action-button"
+                            role="button" href="#" style="margin-left: 12px;background-color: #8054ff;">Logout</a></div>
+            </div>
+        </nav>
+    </div>
+    <!-- Start: Horario -->
+    <div class="text-monospace flex-grow-0" style="height: 531px;">
+        <!-- Start: Dias_y_botones -->
+        <div class="row" style="background-color: #f3f3f3;">
+            <div class="col-xl-1">
+                <div style="height: 30px;"><a href="LandingPageLogueado.html"><img src="assets/img/leftButtonsSchedule.png?h=2f42a2b479409fb58038be253a9cefd8" style="width: 62px;"></a></div>
+            </div>
+            <!-- Start: lunes -->
+            <div class="col text-center" style="background-color: #ffffff;">
+                <h3 class="text-center" style="font-family: 'Nanum Gothic', sans-serif;color: rgb(0,0,0);">Lunes</h3>
+            </div>
+            <!-- End: lunes -->
+            <!-- Start: martes -->
+            <div class="col">
+                <h3 class="text-center" style="font-family: 'Nanum Gothic', sans-serif;color: rgb(0,0,0);">Martes</h3>
+            </div>
+            <!-- End: martes -->
+            <!-- Start: miercoles -->
+            <div class="col">
+                <h3 class="text-center" style="font-family: 'Nanum Gothic', sans-serif;color: rgb(0,0,0);">Miércoles</h3>
+            </div>
+            <!-- End: miercoles -->
+            <!-- Start: jueves -->
+            <div class="col">
+                <h3 class="text-center" style="font-family: 'Nanum Gothic', sans-serif;color: rgb(0,0,0);">Jueves</h3>
+            </div>
+            <!-- End: jueves -->
+            <!-- Start: viernes -->
+            <div class="col">
+                <h3 class="text-center" style="font-family: 'Nanum Gothic', sans-serif;color: rgb(0,0,0);">Viernes</h3>
+            </div>
+            <!-- End: viernes -->
+            <!-- Start: sabado -->
+            <div class="col">
+                <h3 class="text-center" style="font-family: 'Nanum Gothic', sans-serif;color: rgb(0,0,0);"><em>Sábado</em></h3>
+            </div>
+            <!-- End: sabado -->
+            <!-- Start: domingo -->
+            <div class="col">
+                <h3 class="text-center" style="font-family: 'Nanum Gothic', sans-serif;color: rgb(0,0,0);">Domingo</h3>
+            </div>
+            <!-- End: domingo -->
+            <div class="col-xl-1">
+                <div style="height: auto;width: auto;"><a href="LandingPageLogueado.html"><img src="assets/img/rightButtonsSchedule.png?h=c998e51c990ea1d857fba1d7260d224d" style="width: 62px;"></a></div>
+            </div>
+        </div>
+        <!-- End: Dias_y_botones -->
+        <!-- Start: Horario sin dias -->
+        <div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="background-color: rgba(243,243,243,0.39);width: 70px;">7 am</th>
+                            <th class="text-center" style="width: 119px;background-color: #ffffff;"><button onclick="document.getElementById('id02').style.display='block'" class="btn btn-primary text-center border rounded-0" type="button" style="background-color: #8054ff;width: 115px;height: 64;padding: 0px;margin: 0px;">Dormir</button></th>
+                            <th
+                                class="text-center" style="width: 118px;background-color: #ffffff;"><a href="Ficha%20de%20una%20actividad.html"><button class="btn btn-primary text-center border rounded-0" type="button" style="background-color: #8054ff;width: 115px;height: 64;padding: 0px;margin: 0px;">Dormir</button></a></th>
+                                <th
+                                    class="text-center" style="width: 123px;background-color: #ffffff;"><a href="Ficha%20de%20una%20actividad.html"><button class="btn btn-primary text-center border rounded-0" type="button" style="background-color: #8054ff;width: 115px;height: 64;padding: 0px;margin: 0px;">Dormir</button></a></th>
+                                    <th
+                                        class="text-center" style="width: 123px;background-color: #ffffff;"><a href="Ficha%20de%20una%20actividad.html"><button class="btn btn-primary text-center border rounded-0" type="button" style="background-color: #8054ff;width: 115px;height: 64;padding: 0px;margin: 0px;">Dormir</button></a></th>
+                                        <th
+                                            class="text-center" style="width: 123px;background-color: #ffffff;"><a href="Ficha%20de%20una%20actividad.html"><button class="btn btn-primary text-center border rounded-0" type="button" style="background-color: #8054ff;width: 115px;height: 64;padding: 0px;margin: 0px;">Dormir</button></a></th>
+                                            <th
+                                                class="text-center" style="background-color: #ffffff;width: 123px;"><a href="Ficha%20de%20una%20actividad.html"><button class="btn btn-primary text-center border rounded-0" type="button" style="background-color: #8054ff;width: 115px;height: 64;padding: 0px;margin: 0px;">Dormir</button></a></th>
+                                                <th
+                                                    class="text-center" style="background-color: #ffffff;width: 123px;"><a href="Ficha%20de%20una%20actividad.html"><button class="btn btn-primary text-center border rounded-0" type="button" style="background-color: #8054ff;width: 115px;height: 64;padding: 0px;margin: 0px;">Dormir</button></a></th>
+                                                    <th
+                                                        class="text-center" style="background-color: #ffffff;width: 20px;"><a href="Ficha%20de%20una%20actividad.html"></a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>8 am</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>9 am</td>
+                           <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>10 am</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>11 am</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>12 am</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>1 pm</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>2 pm</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>3 pm</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>4 pm</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>5 pm</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>6 pm</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>7 pm</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>8 pm</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>9 pm</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>10 pm</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>11 pm</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>12 pm</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                        <tr>
+                            <td>1 am</td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- End: Horario sin dias -->
+
+
+    <!-- End: Horario -->
+    <script src="assets/js/jquery.min.js?h=83e266cb1712b47c265f77a8f9e18451"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js?h=63715b63ee49d5fe4844c2ecae071373"></script>
+    <script src="assets/js/Profile-Edit-Form.js?h=36f16d72db7b5e137e5f6f74a6f95a32"></script>
+    <script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+
+</html>
