@@ -226,6 +226,42 @@ span.psw {
   </form>
 </div>
 
+<div id="id04" class="modal" style="height: 100%; width: 100%">
+  
+  <form class="modal-content animate" style="border-radius: 15px; height: 80%" action="/action_page.php">
+    <div class="container" style="border-radius:  15px 15px 0px 0px; background-color:#8054FF">
+        <h2 style="color: white;">Hacer deporte</h2>
+      
+    </div>
+    <div class="container">
+      
+      <label for="des"><b>Descripción:</b></label>
+      <p>1 hora de ejercicio</p>
+        
+      <label for="cat"><b>Categoría:</b></label>
+      <p>Deporte</p>
+
+      <label for="psw"><b>Fecha:</b></label>
+      <p>09/09/2019</p>
+
+       <label for="psw"><b>Hora de inicio</b></label>
+      <p>08:00</p>
+      
+      <label for="psw"><b>Duración:</b></label>
+      <p>01:00</p>
+      <label>
+        
+      </label>
+    </div>
+
+    
+  </form>
+</div>
+
+<div id="id03" class="modal" style="height: 100%; width: 100%">
+  <img style="margin-left: 400px"src="assets/img/tiempo_elapsado_sample.png"></img>
+</div>
+
     <div class="header-dark" style="height: 64px;background-color: rgb(255,255,255);background-image: url(&quot;assets/img/background.png?h=516acba3f3087872e8e1224e6f4ceed2&quot;);">
         <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search" style="background-color: #4200c2;">
             <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><img class="rounded-circle img-fluid" style="height: 50px;height: 142;width: 144;padding-left: 0px;padding-right: 0px;"
@@ -237,6 +273,10 @@ span.psw {
                     <!-- Start: NombreyCorreo -->
                     <h3 style="font-family: 'Nanum Gothic', sans-serif;font-size: 18px;margin-left: 10px;">Hola Jorge!<small><br>jperez@gmail.com</small></h3>
                     <!-- End: NombreyCorreo --><a class="btn btn-light action-button" role="button" href="perfil.html" style="margin-left: 122px;background-color: #8054ff;">Mi perfil</a><a class="btn btn-light action-button" role="button" href="stats.html" style="margin-left: 23px;background-color: #8054ff;">Stats</a>
+
+                    <button onclick="document.getElementById('id03').style.display='block'" style="width: 80px; margin-left: 40px; border-radius: 5px">Ver Actividad</button>
+                    <button style="width: 80px; margin-left: 40px; border-radius: 5px">Filtar</button>
+
                     <form
                         class="form-inline mr-auto" target="_self">
                         <div class="form-group"><label for="search-field"></label></div>
@@ -319,7 +359,7 @@ span.psw {
                     <tbody>
                         <tr>
                             <td>8 am</td>
-                            <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
+                            <td><button onclick="document.getElementById('id04').style.display='block'" class="btn btn-primary text-center border rounded-0" type="button" style="background-color: orange;width: 115px;height: 64;padding: 0px;margin: 0px;">Hacer deporte</button></a></td>
                             <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
                             <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
                             <td><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Añadir evento</button></td>
@@ -522,6 +562,18 @@ window.onclick = function(event) {
 <script>
 // Get the modal
 var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id03');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
